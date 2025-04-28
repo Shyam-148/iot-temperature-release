@@ -1,0 +1,361 @@
+{
+	"info": {
+		"_postman_id": "c5c7ed6c-fe4c-44ff-a576-4b6898f1717d",
+		"name": "IOT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40458126"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"\",\r\n    \"password\":\"\",\r\n    \"username\" : \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iot-backend-sem-6.vercel.app/api/Auth/register",
+							"protocol": "https",
+							"host": [
+								"iot-backend-sem-6",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"Auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"\",\r\n    \"password\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iot-backend-sem-6.vercel.app/api/Auth/login",
+							"protocol": "https",
+							"host": [
+								"iot-backend-sem-6",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"Auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Board",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \r\n    \"token\" : \"\",\r\n    \"board_name\": \"\",\r\n    \"board_password\": \"\",\r\n    \"is_public\": false\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/board/register",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"board",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authentication",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Connection",
+								"value": "close",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"board_id\": \"\",\r\n    \"board_password\": \"\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "iot-backend-sem-6.vercel.app/api/board/auth",
+							"host": [
+								"iot-backend-sem-6",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"board",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Public Board",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "------",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "iot-backend-sem-6.vercel.app/api/board/public",
+							"host": [
+								"iot-backend-sem-6",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"board",
+								"public"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Private Board",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "----",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "iot-backend-sem-6.vercel.app/api/board/private",
+							"host": [
+								"iot-backend-sem-6",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"board",
+								"private"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "-----",
+									"type": "text"
+								},
+								{
+									"key": "board_id",
+									"value": "-----",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://iot-backend-sem-6.vercel.app/api/board/detail",
+							"protocol": "https",
+							"host": [
+								"iot-backend-sem-6",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"board",
+								"detail"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Temp",
+			"item": [
+				{
+					"name": "Send",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\" : \"\",\r\n    \"humidity\" : \"\",\r\n    \"temperature\": \"\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "iot-backend-sem-6.vercel.app/api/temp/send",
+							"host": [
+								"iot-backend-sem-6",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"temp",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Receive",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"board_id\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://shyampeshavariya.mooo.com/api/temp/receive",
+							"protocol": "http",
+							"host": [
+								"shyampeshavariya",
+								"mooo",
+								"com"
+							],
+							"path": [
+								"api",
+								"temp",
+								"receive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Current Temp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "----",
+									"type": "text"
+								},
+								{
+									"key": "board_id",
+									"value": "-----",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "iot-backend-sem-6.vercel.app/api/temp/receive/current",
+							"host": [
+								"iot-backend-sem-6",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"api",
+								"temp",
+								"receive",
+								"current"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
